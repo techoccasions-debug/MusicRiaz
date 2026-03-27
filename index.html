@@ -488,28 +488,92 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
 .social-link:hover{background:var(--red);color:#fff}
 
 /* ── Floating WA ───────────────────────────────────────── */
-.wa-float{
-  position:fixed;bottom:26px;right:26px;z-index:800;
-  display:flex;align-items:center;gap:10px;
+/* ── Floating WhatsApp Button ───────────────────────── */
+
+.wa-float {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.wa-tip{
-  background:var(--dark);color:#fff;font-size:.8rem;font-weight:600;
-  padding:9px 15px;border-radius:100px;border:1px solid rgba(255,255,255,.1);
-  white-space:nowrap;opacity:0;transform:translateX(8px);
-  transition:opacity .25s,transform .25s;pointer-events:none;
-  box-shadow:0 4px 16px rgba(0,0,0,.3);
+
+/* Tooltip */
+.wa-tip {
+  background: #111;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 9px 15px;
+  border-radius: 100px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
-.wa-float:hover .wa-tip{opacity:1;transform:none}
-.wa-circle{
-  position:relative;width:56px;height:56px;border-radius:50%;
-  background:#25d366;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 6px 24px rgba(37,211,102,.4);flex-shrink:0;
-  transition:background .2s,transform .2s;
+
+.wa-float:hover .wa-tip {
+  opacity: 1;
+  transform: translateX(0);
 }
-.wa-circle:hover{background:#1ebe5b;transform:scale(1.1)}
-.wa-circle svg{width:28px;height:28px;fill:#fff}
-.wa-pulse{position:absolute;inset:0;border-radius:50%;background:#25d366;animation:waPulse 2.5s ease-out 3}
-@keyframes waPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2);opacity:0}}
+
+/* Main Circle */
+.wa-circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.wa-circle:hover {
+  background: #1ebe5b;
+  transform: scale(1.1);
+}
+
+/* WhatsApp Icon (SVG) */
+.wa-circle svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+  position: relative;
+  z-index: 2; /* Always above pulse */
+}
+
+/* Pulse Animation */
+.wa-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.4);
+  z-index: 1;
+  animation: waPulse 2s infinite;
+}
+
+/* Keyframes */
+@keyframes waPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 /* ── Responsive ────────────────────────────────────────── */
 @media(max-width:1024px){
@@ -599,7 +663,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
 <!-- ── Top bar ────────────────────────────────────────── -->
 <div id="topbar">
   🎉 FREE Demo Class for First-time Students! Limited slots available.
-  <a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo!" target="_blank">Book Now →</a>
+  <a href="https://wa.me/918005632843?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo!" target="_blank">Book Now →</a>
 </div>
 
 <!-- ── Navbar ─────────────────────────────────────────── -->
@@ -620,7 +684,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo!" target="_blank" class="btn-wa-nav">
+      <a href="https://wa.me/918005632843?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo!" target="_blank" class="btn-wa-nav">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.054 23.196a.75.75 0 00.924.924l5.338-1.478A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.87 0-3.63-.487-5.157-1.341l-.369-.213-3.832 1.061 1.061-3.832-.213-.369A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         WhatsApp
       </a>
@@ -649,7 +713,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
     <a href="#contact" class="mob-link">Contact</a>
   </div>
   <div class="mob-ctas">
-    <a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo!" target="_blank" style="background:#25d366;color:#fff">
+    <a href="https://wa.me/918005632843?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo!" target="_blank" style="background:#25d366;color:#fff">
       <svg style="width:18px;height:18px;fill:#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.054 23.196a.75.75 0 00.924.924l5.338-1.478A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.87 0-3.63-.487-5.157-1.341l-.369-.213-3.832 1.061 1.061-3.832-.213-.369A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
       Book Free Demo on WhatsApp
     </a>
@@ -673,7 +737,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
       </h1>
       <p class="hero-sub">Expert Guitar &amp; Piano lessons for all ages and skill levels. Learn online, at our studio, or at your home — guided by Jaipur's most trusted music educator.</p>
       <div class="hero-ctas">
-        <a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo%20class!" target="_blank" class="btn-red">
+        <a href="https://wa.me/918005632843?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo%20class!" target="_blank" class="btn-red">
           <svg style="width:18px;height:18px;fill:#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.054 23.196a.75.75 0 00.924.924l5.338-1.478A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.87 0-3.63-.487-5.157-1.341l-.369-.213-3.832 1.061 1.061-3.832-.213-.369A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
           Book Free Demo
         </a>
@@ -784,7 +848,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
             <li><div class="ch-icon">✓</div> Western, Bollywood &amp; fingerpicking styles</li>
             <li><div class="ch-icon">✓</div> Stage performance &amp; recital preparation</li>
           </ul>
-          <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20Guitar%20classes!" target="_blank" class="btn-apply">
+          <a href="https://wa.me/918005632843?text=Hi%2C%20I%27m%20interested%20in%20Guitar%20classes!" target="_blank" class="btn-apply">
             <svg style="width:16px;height:16px;fill:#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.054 23.196a.75.75 0 00.924.924l5.338-1.478A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.87 0-3.63-.487-5.157-1.341l-.369-.213-3.832 1.061 1.061-3.832-.213-.369A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
             APPLY NOW
           </a>
@@ -816,7 +880,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
             <li><div class="ch-icon">✓</div> Scales, arpeggios &amp; music theory integrated</li>
             <li><div class="ch-icon">✓</div> Special program for children aged 5+</li>
           </ul>
-          <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20Piano%20classes!" target="_blank" class="btn-apply">
+          <a href="https://wa.me/918005632843?text=Hi%2C%20I%27m%20interested%20in%20Piano%20classes!" target="_blank" class="btn-apply">
             <svg style="width:16px;height:16px;fill:#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.054 23.196a.75.75 0 00.924.924l5.338-1.478A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.87 0-3.63-.487-5.157-1.341l-.369-.213-3.832 1.061 1.061-3.832-.213-.369A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
             APPLY NOW
           </a>
@@ -858,7 +922,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
           <div class="af"><div class="af-dot"></div>Bollywood &amp; Fusion</div>
           <div class="af"><div class="af-dot"></div>Kids Program (Ages 5+)</div>
         </div>
-        <a href="https://wa.me/919876543210?text=Hi%20Aditya%2C%20I%27d%20like%20to%20know%20more!" target="_blank" class="btn-red" style="display:inline-flex">Chat with Vikas →</a>
+        <a href="https://wa.me/918005632843?text=Hi%20Aditya%2C%20I%27d%20like%20to%20know%20more!" target="_blank" class="btn-red" style="display:inline-flex">Chat with Vikas →</a>
       </div>
     </div>
   </div>
@@ -1028,11 +1092,11 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
       <h2>Start Your Musical Journey Today!</h2>
       <p>Book your FREE 30-minute demo class — zero commitment, zero pressure. Just music, joy, and a glimpse of what you can achieve.</p>
       <div class="cta-btns">
-        <a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo%20class!" target="_blank" class="btn-white">
+        <a href="https://wa.me/918005632843?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo%20class!" target="_blank" class="btn-white">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.054 23.196a.75.75 0 00.924.924l5.338-1.478A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.87 0-3.63-.487-5.157-1.341l-.369-.213-3.832 1.061 1.061-3.832-.213-.369A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
           Book Free Demo on WhatsApp
         </a>
-        <a href="tel:+919876543210" class="btn-outline-white">📞 Call Now</a>
+        <a href="tel:+918005632843" class="btn-outline-white">📞 Call Now</a>
       </div>
       <p class="cta-trust">✅ 100% Free &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Instant confirmation</p>
     </div>
@@ -1087,7 +1151,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
             <div class="form-title">Send a Message</div>
             <div class="form-row">
               <div class="fgroup"><label>Your Name *</label><input type="text" id="fn" placeholder="Rahul Singh"/></div>
-              <div class="fgroup"><label>Phone *</label><input type="tel" id="fp" placeholder="+91 9876543210"/></div>
+              <div class="fgroup"><label>Phone *</label><input type="tel" id="fp" placeholder="+91 8005632843"/></div>
             </div>
             <div class="fgroup"><label>Interested In</label>
               <select id="fi">
@@ -1139,7 +1203,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
           <a href="#" class="social-link">📸</a>
           <a href="#" class="social-link">▶️</a>
           <a href="#" class="social-link">👍</a>
-          <a href="https://wa.me/919876543210" target="_blank" class="social-link">💬</a>
+          <a href="https://wa.me/918005632843" target="_blank" class="social-link">💬</a>
         </div>
       </div>
       <div class="footer-col">
@@ -1165,7 +1229,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
         <h4>Contact</h4>
         <ul>
           <li><a href="#">Civil Lines, Jaipur</a></li>
-          <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><a href="tel:+918005632843">+91 98765 43210</a></li>
           <li><a href="mailto:aditya@Musicstudio.in">aditya@Musicstudio.in</a></li>
           <li><a href="#contact">Quick Enquiry</a></li>
         </ul>
@@ -1179,7 +1243,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
 </footer>
 
 <!-- ── Floating WhatsApp ───────────────────────────────── -->
-<a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo!" target="_blank" class="wa-float" title="WhatsApp">
+<a href="https://wa.me/918005632843?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo!" target="_blank" class="wa-float" title="WhatsApp">
   <span class="wa-tip">Book Free Demo 🎸</span>
   <div class="wa-circle">
     <div class="wa-pulse"></div>
@@ -1288,7 +1352,7 @@ function sendEnquiry(){
   const msg = document.getElementById('fmsg').value.trim();
   if(!n||!p){ alert('Please enter your name and phone number.'); return; }
   const text = `Hi Aditya! 👋\n\nNew Enquiry from Website:\n\nName: ${n}\nPhone: ${p}\nCourse: ${i||'Not specified'}\nMode: ${m||'Not specified'}\nMessage: ${msg||"I'd like to book a free demo class."}`;
-  window.open(`https://wa.me/919876543210?text=${encodeURIComponent(text)}`, '_blank');
+  window.open(`https://wa.me/918005632843?text=${encodeURIComponent(text)}`, '_blank');
   document.getElementById('formFields').style.display = 'none';
   document.getElementById('formSuccess').classList.add('show');
 }
