@@ -835,6 +835,34 @@ footer{background:var(--dark);color:#fff;padding:60px 0 28px}
   align-items: center;
   padding: 15px;
 }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* MAIN FIX */
+section {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Avoid double padding where container exists */
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 </style>
 </head>
 <body>
