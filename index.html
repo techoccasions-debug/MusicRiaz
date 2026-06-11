@@ -893,6 +893,117 @@ video{
   }
 
 }
+
+.google-reviews-section{
+  padding:100px 0;
+  background:#f8f9fa;
+}
+
+.google-review-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.google-rating{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+}
+
+.rating-score{
+  font-size:1.4rem;
+  font-weight:700;
+}
+
+.stars{
+  color:#fbbc04;
+  letter-spacing:2px;
+}
+
+.review-count{
+  color:#666;
+  font-size:.9rem;
+}
+
+.google-review-slider{
+  display:flex;
+  gap:24px;
+  overflow-x:auto;
+  padding-bottom:10px;
+}
+
+.google-review-slider::-webkit-scrollbar{
+  height:6px;
+}
+
+.google-review-card{
+  min-width:380px;
+  max-width:380px;
+  background:#fff;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  border:1px solid #ececec;
+}
+
+.gr-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.gr-avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#4285f4;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+.gr-user h4{
+  margin:0;
+  font-size:1rem;
+}
+
+.gr-user span{
+  color:#777;
+  font-size:.85rem;
+}
+
+.gr-stars{
+  color:#fbbc04;
+  font-size:.95rem;
+  margin-bottom:14px;
+}
+
+.gr-stars span{
+  color:#777;
+  margin-left:10px;
+}
+
+.gr-text{
+  color:#444;
+  line-height:1.7;
+  font-size:.95rem;
+}
+
+.review-btn{
+  padding:14px 24px;
+  background:#e8192c;
+  color:#fff;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+}
 </style>
 </head>
 <body>
@@ -1331,55 +1442,264 @@ video{
   </div>
 </section>
 <!-- ── Testimonials ───────────────────────────────────── -->
-<section id="testimonials" class="section">
+<section id="reviews" class="google-reviews-section">
+
   <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px" class="reveal">
-      <div>
-        <div class="tag">Student Stories</div>
-        <h2 class="section-title" style="margin-bottom:4px">What Our Students Say</h2>
-        <div style="display:flex;align-items:center;gap:8px">
-          <div style="display:flex;gap:3px">
-            <span style="color:#f5a623;font-size:1rem">★</span><span style="color:#f5a623;font-size:1rem">★</span><span style="color:#f5a623;font-size:1rem">★</span><span style="color:#f5a623;font-size:1rem">★</span><span style="color:#f5a623;font-size:1rem">★</span>
-          </div>
-          <span style="font-size:.88rem;color:var(--muted)">4.9 from 200+ reviews</span>
-        </div>
-      </div>
-      <div class="testi-arrows">
-        <button class="tarrow" id="tPrev">←</button>
-        <button class="tarrow" id="tNext">→</button>
-      </div>
+
+```
+<div class="google-review-header">
+
+  <div>
+    <div class="tag">Google Reviews</div>
+
+    <h2 class="section-title">
+      Trusted by Students Across Jaipur
+    </h2>
+
+    <div class="google-rating">
+      <span class="rating-score">5.0</span>
+      <span class="stars">★★★★★</span>
+      <span class="review-count">Based on Real Google Reviews</span>
     </div>
-    <div class="testi-carousel reveal rd1">
-      <div class="testi-track" id="testiTrack">
-        <div class="testi-card">
-          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-          <p class="testi-quote">I walked in knowing literally nothing about guitar. Within 6 months I was playing full songs at my college fest. The teaching style here is unlike anything — patient, structured, and genuinely fun.</p>
-          <div class="testi-foot"><div class="tav">AM</div><div><div class="tname">Aryan Mehta</div><div class="trole">Guitar student, 2 years</div></div></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-          <p class="testi-quote">My daughter (7) is completely in love with piano. The teacher has this incredible gift of making music approachable for kids. She now practices voluntarily every single day!</p>
-          <div class="testi-foot"><div class="tav">PS</div><div><div class="tname">Priya Sharma</div><div class="trole">Piano student's parent</div></div></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-          <p class="testi-quote">I was skeptical about online lessons, but the experience blew me away. Feedback is immediate, lessons are structured, and I cleared Trinity Grade 3 on my first attempt!</p>
-          <div class="testi-foot"><div class="tav">RK</div><div><div class="tname">Rohan Kapoor</div><div class="trole">Online Guitar student</div></div></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-          <p class="testi-quote">Cleared ABRSM Grade 5 with a Merit! The focus on music theory alongside practical skills made all the difference. Couldn't have done it without this amazing teacher.</p>
-          <div class="testi-foot"><div class="tav">SG</div><div><div class="tname">Sneha Gupta</div><div class="trole">Piano — ABRSM prep</div></div></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-          <p class="testi-quote">As a working professional, I needed flexible timings. The online format was perfect — same quality as in-person. I can now play my favourite Bollywood songs on guitar!</p>
-          <div class="testi-foot"><div class="tav">VK</div><div><div class="tname">Vikram Khanna</div><div class="trole">Guitar student, 1 year</div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-nav" id="testiNav"></div>
   </div>
+
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9"
+     target="_blank"
+     class="review-btn">
+    View All Reviews →
+  </a>
+
+</div>
+
+<div class="google-review-slider">
+
+  <!-- Review 1 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">HS</div>
+        <div class="gr-user">
+          <h4>HS Shekhawat</h4>
+          <span>Local Guide · 29 reviews</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>a year ago</span>
+      </div>
+
+      <p class="gr-text">
+        After my retirement, I was searching for music classes suitable for beginners.
+        Luckily I found Soul Music Classes. Vikas sir is a wonderful teacher who
+        teaches according to the student's age and learning pace.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 2 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">VL</div>
+        <div class="gr-user">
+          <h4>Vaibhav Lodha</h4>
+          <span>Local Guide · 33 reviews · 6 photos</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>4 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        Vikas sir is absolutely phenomenal when it comes to music.
+        He constantly pushes students to improve rhythm, flow and technique.
+        Highly recommended for anyone starting their musical journey.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 3 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">KK</div>
+        <div class="gr-user">
+          <h4>Krishan Kant</h4>
+          <span>4 reviews</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>4 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        Vikas sir has excellent knowledge of guitar and keyboard.
+        Such a nice person and a wonderful teacher.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 4 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">DL</div>
+        <div class="gr-user">
+          <h4>Dhravika's Life</h4>
+          <span>2 reviews</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>3 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        Very great experience. I learned a lot and enjoyed every class.
+        Everyone should join such wonderful music classes.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 5 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">RS</div>
+        <div class="gr-user">
+          <h4>Ratika Sharma</h4>
+          <span>Local Guide · 52 reviews · 79 photos</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>5 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        I learnt keyboard here and my experience was amazing.
+        I loved the teaching style and the way concepts were explained.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 6 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">YS</div>
+        <div class="gr-user">
+          <h4>Yashi Sharma</h4>
+          <span>3 reviews</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>2 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        Great learning experience. Vikas sir is humble and always ready
+        to teach unique musical pieces in creative ways.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 7 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">NS</div>
+        <div class="gr-user">
+          <h4>Study with Neha Singh</h4>
+          <span>6 reviews · 2 photos</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>5 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        Great talented teacher. Vikas sir makes guitar lessons easy
+        to understand and enjoyable for beginners.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 8 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">NS</div>
+        <div class="gr-user">
+          <h4>Nitin Sharma</h4>
+          <span>4 reviews · 3 photos</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>5 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        Classes with Vikas sir have been extremely worthwhile.
+        A great place to begin your musical journey.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 9 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">HL</div>
+        <div class="gr-user">
+          <h4>Himanshu Sain</h4>
+          <span>3 reviews</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>4 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        It was a very good experience learning with Vikas sir.
+        Highly recommended for aspiring musicians.
+      </p>
+    </div>
+  </a>
+
+  <!-- Review 10 -->
+  <a href="https://maps.app.goo.gl/hxdhC5WVcccYz8vQ9" target="_blank" class="google-review-link">
+    <div class="google-review-card">
+      <div class="gr-head">
+        <div class="gr-avatar">MK</div>
+        <div class="gr-user">
+          <h4>Manish Kumawat</h4>
+          <span>2 reviews</span>
+        </div>
+      </div>
+
+      <div class="gr-stars">
+        ★★★★★ <span>5 years ago</span>
+      </div>
+
+      <p class="gr-text">
+        Best teacher in town. Excellent guidance, patience and dedication
+        towards every student.
+      </p>
+    </div>
+  </a>
+
+</div>
+```
+
+  </div>
+
 </section>
 
 <!-- ── CTA Banner ──────────────────────────────────────── -->
