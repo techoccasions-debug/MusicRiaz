@@ -739,6 +739,76 @@ video{
   font-size:28px;
   margin-bottom:10px;
 }
+.services-bg{
+  position:relative;
+  overflow:hidden;
+}
+
+
+.services-video-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+
+.services-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  z-index:1;
+}
+
+
+.services-bg .container{
+  position:relative;
+  z-index:2;
+}
+
+
+.services-bg .section-title,
+.services-bg .section-sub,
+.services-bg .tag{
+  color:white;
+}
+
+
+.svc-card{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px);
+}
+.svc-image{
+  width:100%;
+  height:200px;
+  overflow:hidden;
+  border-radius:18px 18px 0 0;
+}
+
+.svc-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s ease;
+}
+
+.svc-card:hover .svc-image img{
+  transform:scale(1.08);
+}
+
+.svc-card{
+  overflow:hidden;
+  padding-bottom:25px;
+}
+
+.svc-title,
+.svc-desc,
+.svc-list{
+  margin-left:25px;
+  margin-right:25px;
+}
 </style>
 </head>
 <body>
@@ -1011,7 +1081,7 @@ video{
       </div>
     </div>
   </div>
-      </div>
+      
 
 
       <!-- VIKAS SPECIAL MESSAGE SECTION -->
@@ -1037,15 +1107,13 @@ video{
             Your browser does not support video.
           </video>
 
-          <div class="message-overlay">
-            🎵 Welcome to Your Music Journey
-          </div>
+         
         </div>
 
 
         <div class="message-cta">
           <h3>Ready to Begin?</h3>
-          <p>
+          <p style="margin:20px auto 30px; padding:0 20px; line-height:1.7;">
             Join Vikas and take your first step towards becoming a confident musician.
           </p>
 
@@ -1119,7 +1187,15 @@ video{
 </section>
 
 <!-- ── Services ───────────────────────────────────────── -->
-<section id="services" class="section-sm" style="background:var(--gray)">
+<section id="services" class="section-sm services-bg">
+  
+  <video class="services-video-bg" autoplay muted loop playsinline>
+    <source src="vikas-piano.mp4" type="video/mp4">
+  </video>
+
+  <div class="services-overlay"></div>
+
+  <div class="container">
   <div class="container">
     <div class="center reveal">
       <div class="tag">How We Teach</div>
@@ -1127,40 +1203,78 @@ video{
       <p class="section-sub">Choose the format that fits your life. All modes include the same expert instruction and structured curriculum.</p>
     </div>
     <div class="services-grid">
-      <div class="svc-card reveal rd1">
-        <div class="svc-icon-wrap">💻</div>
-        <div class="svc-title">Online Classes</div>
-        <p class="svc-desc">High-quality live sessions over Zoom — same dedication, zero commute. Perfect for busy schedules and outstation students anywhere in India.</p>
-        <ul class="svc-list">
-          <li><div class="svc-check">✓</div>Flexible batch timings</li>
-          <li><div class="svc-check">✓</div>Recorded sessions on request</li>
-          <li><div class="svc-check">✓</div>Available Pan-India</li>
-        </ul>
-      </div>
-      <div class="svc-card reveal rd2">
-        <div class="svc-icon-wrap">🏫</div>
-        <div class="svc-title">At Our Studio</div>
-        <p class="svc-desc">Learn at our well-equipped, professional studio in Civil Lines, Jaipur. Studio instruments provided — a real musical environment to inspire you.</p>
-        <ul class="svc-list">
-          <li><div class="svc-check">✓</div>Professional instruments</li>
-          <li><div class="svc-check">✓</div>Group &amp; 1-on-1 formats</li>
-          <li><div class="svc-check">✓</div>First demo class FREE</li>
-        </ul>
-      </div>
-     <div class="svc-card reveal rd3">
-  <div class="svc-icon-wrap">🏠</div>
-  <div class="svc-title">Home Tuition</div>
-  <p class="svc-desc">
-    We come to you! Personalised one-on-one sessions at your home for maximum comfort and faster learning.
-  </p>
-  <ul class="svc-list">
-    <li><div class="svc-check">✓</div>Flexible timings</li>
-    <li><div class="svc-check">✓</div>Personal attention</li>
-    <li><div class="svc-check">✓</div>Best for kids & beginners</li>
-  </ul>
-</div>
+
+  <!-- Online -->
+  <div class="svc-card reveal rd1">
+
+    <div class="svc-image">
+      <img src="online.jpg" alt="Online Music Classes">
     </div>
+
+    <div class="svc-title">Online Classes</div>
+
+    <p class="svc-desc">
+      High-quality live sessions over Zoom — same dedication, zero commute.
+      Perfect for busy schedules and outstation students anywhere in India.
+    </p>
+
+    <ul class="svc-list">
+      <li><div class="svc-check">✓</div>Flexible batch timings</li>
+      <li><div class="svc-check">✓</div>Recorded sessions on request</li>
+      <li><div class="svc-check">✓</div>Available Pan-India</li>
+    </ul>
+
   </div>
+
+
+  <!-- Studio -->
+  <div class="svc-card reveal rd2">
+
+    <div class="svc-image">
+      <img src="studio.jpg" alt="Music Studio Classes">
+    </div>
+
+    <div class="svc-title">At Our Studio</div>
+
+    <p class="svc-desc">
+      Learn at our well-equipped, professional studio in Civil Lines, Jaipur.
+      Studio instruments provided — a real musical environment to inspire you.
+    </p>
+
+    <ul class="svc-list">
+      <li><div class="svc-check">✓</div>Professional instruments</li>
+      <li><div class="svc-check">✓</div>Group &amp; 1-on-1 formats</li>
+      <li><div class="svc-check">✓</div>First demo class FREE</li>
+    </ul>
+
+  </div>
+
+
+
+  <!-- Home -->
+  <div class="svc-card reveal rd3">
+
+    <div class="svc-image">
+      <img src="house.jpg" alt="Home Music Tuition">
+    </div>
+
+    <div class="svc-title">Home Tuition</div>
+
+    <p class="svc-desc">
+      We come to you! Personalised one-on-one sessions at your home for
+      maximum comfort and faster learning.
+    </p>
+
+    <ul class="svc-list">
+      <li><div class="svc-check">✓</div>Flexible timings</li>
+      <li><div class="svc-check">✓</div>Personal attention</li>
+      <li><div class="svc-check">✓</div>Best for kids &amp; beginners</li>
+    </ul>
+
+  </div>
+
+</div>
+</div>
 </section>
 
 <!-- ── Testimonials ───────────────────────────────────── -->
