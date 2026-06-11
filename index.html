@@ -104,8 +104,14 @@ ul{list-style:none}
 
 /* Mobile drawer */
 .mobile-drawer{
-  display:none;position:fixed;inset:0;z-index:999;
-  background:#fff;flex-direction:column;padding:28px;overflow-y:auto;
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:#fff;
+  flex-direction:column;
+  padding:30px 28px;
+  overflow-y:auto;
 }
 .mobile-drawer.open{display:flex}
 .mob-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
@@ -1070,7 +1076,7 @@ video{
 <div class="mobile-drawer" id="mobile-drawer">
   <div class="mob-header">
     <div class="nav-logo">
-      <img src="logo.png" alt="Music Riyaz Logo" class="logo-img">
+      <img src="logo-nav.png" alt="Music Riyaz Logo" class="logo-img">
       <div class="logo-text" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem">Music <span style="color:var(--red)">Studio</span></div>
     </div>
     <button class="mob-close" id="mob-close">✕</button>
