@@ -1,5 +1,4 @@
-<script>
-    document.querySelectorAll('.faq-q').forEach(q => {
+ document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('click', () => {
     const a = q.nextElementSibling;
     const isOpen = a.classList.contains('active');
@@ -120,4 +119,3 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 const tracky = document.querySelector(".google-review-track");
 tracky.innerHTML += tracky.innerHTML;
-</script>
