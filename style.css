@@ -1070,3 +1070,14 @@ video{
   font-style: italic;
   font-family: Georgia, serif;
 }
+.social-link {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.social-link:hover {
+  color: #ff3b7b; /* or your brand color */
+  transform: scale(1.2);
+}
